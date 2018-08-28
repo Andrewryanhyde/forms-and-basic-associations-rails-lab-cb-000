@@ -8,6 +8,10 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name
-    self.artist ? self.artist.name :nil 
+    self.artist ? self.artist.name :nil
+  end
+
+  def genre_name=(name)
+    self.genre = Genre.find_or_create_by_name(:name => name)
   end
 end
