@@ -23,14 +23,14 @@ class Song < ActiveRecord::Base
     notes.each do |note|
       if note != ""
         note = Note.create(:content => note)
-        self.notes << note 
+        self.notes << note
       end
     end
   end
 
-  def note_contents 
-    Note.all.map do 
-      note.content 
+  def note_contents
+    Note.all.map do
+      note.content
     end
   end
 end
